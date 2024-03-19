@@ -18,7 +18,7 @@ const slots = useSlots()
             <slot name="image"></slot>
           </q-avatar>
         </div>
-        <div class="text-body2" :class="slots.image ? 'col-12 col-md-8' : ' col-12'">
+        <div class="text-body2 flex items-center" :class="slots.image ? 'col-12 col-md-8' : ' col-12'">
           <slot></slot>
         </div>
 
