@@ -3,13 +3,13 @@ import {ref} from 'vue'
 import CardContainer from 'src/components/CardContainer.vue'
 import ChordsForm from 'src/components/ChordsForm.vue'
 import ProgressionSelect from 'src/components/ProgressionSelect.vue'
-import { majorScale } from 'src/composables/scale'
+import { majorScale, minorScale } from 'src/composables/scale'
 
 const chordsModel = ref([])
 const progressionModel = ref()
+const tempDisplayAnswer = ref()
 function handleSubmit(){
-  console.log(chordsModel.value , progressionModel.value)
-  console.log(majorScale(chordsModel.value[0]))
+  tempDisplayAnswer.value = majorScale(chordsModel.value[0])
 }
 
 </script>
@@ -27,6 +27,9 @@ function handleSubmit(){
     <div class=" q-gutter-y-md">
       <ChordsForm :model= chordsModel />
       <ProgressionSelect v-model= progressionModel  />
+      <div style="height: 30px;" class="flex flex-center text-white">
+        {{ tempDisplayAnswer }}
+      </div>
     </div>
     <template v-slot:footer>
       <q-btn type="submit" @click="handleSubmit" class="full-height bg-accent" label="submit"  />
