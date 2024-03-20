@@ -4,12 +4,20 @@ import CardContainer from 'src/components/CardContainer.vue'
 import ChordsForm from 'src/components/ChordsForm.vue'
 import ProgressionSelect from 'src/components/ProgressionSelect.vue'
 import { majorScale, minorScale } from 'src/composables/scale'
+import { Notify } from 'quasar'
 
 const chordsModel = ref([])
 const progressionModel = ref()
 const tempDisplayAnswer = ref()
 function handleSubmit(){
-  tempDisplayAnswer.value = majorScale(chordsModel.value[0])
+  try {
+    tempDisplayAnswer.value = majorScale(chordsModel.value[0])
+  } catch (error) {
+    Notify.create({
+      type: 'negative',
+      message : error
+    })
+  }
 }
 
 </script>
