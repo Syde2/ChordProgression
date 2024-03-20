@@ -4,7 +4,7 @@ import {ref} from 'vue'
 const model = defineModel()
 
 const chord = ref(null);
-const validationRules = [val => validateInput(val) || 'Eg F#m' ]
+const validationRules = [val => validateInput(val) || 'Wrong Format' ]
 
 function validateInput(input) {
   if( !input.length || input===''){return true}
@@ -16,6 +16,6 @@ function validateInput(input) {
 </script>
 
 <template>
-	<q-input :rules="validationRules"  maxlength="4" item-aligned dense square no-error-icon  outlined   bottom-slots  v-model="model"
-   bg-color='secondary' input-class="text-white" />
+	<q-input dark :rules="validationRules"  maxlength="4" item-aligned dense square no-error-icon  outlined   bottom-slots  v-model="model"
+   bg-color='secondary'  input-style=" text-align: center;" />
 </template>

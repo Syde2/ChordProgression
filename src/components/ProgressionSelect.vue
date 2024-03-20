@@ -7,6 +7,6 @@ const options =['I - IV - V', ' I - V - vi - IV', 'vi - IV - I - V', 'I - vi - I
 </script>
 
 <template>
-  <q-select  item-aligned dense square outlined v-model=progressionModel :options="options" label="Progression"
-  bg-color='secondary' input-class="text-white" color="white" popup-content-class="bg-secondary text-white" />
+  <q-select  dark item-aligned dense square outlined v-model=progressionModel :options="options" label="Progression"
+  bg-color='secondary' input-class="text-white" label-color="white" popup-content-class="bg-secondary text-white" />
 </template>

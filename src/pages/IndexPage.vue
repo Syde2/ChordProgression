@@ -3,11 +3,13 @@ import {ref} from 'vue'
 import CardContainer from 'src/components/CardContainer.vue'
 import ChordsForm from 'src/components/ChordsForm.vue'
 import ProgressionSelect from 'src/components/ProgressionSelect.vue'
+import { majorScale } from 'src/composables/scale'
 
 const chordsModel = ref([])
 const progressionModel = ref()
 function handleSubmit(){
   console.log(chordsModel.value , progressionModel.value)
+  console.log(majorScale(chordsModel.value[0]))
 }
 
 </script>
@@ -22,7 +24,7 @@ function handleSubmit(){
     <template v-slot:image>
         <q-img src="piano.jpg" ratio="1" />
     </template>
-    <div>
+    <div class=" q-gutter-y-md">
       <ChordsForm :model= chordsModel />
       <ProgressionSelect v-model= progressionModel  />
     </div>
