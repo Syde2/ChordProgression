@@ -2,7 +2,12 @@
 import {ref} from 'vue'
 
 const progressionModel =defineModel()
-const options =['I - IV - V', ' I - V - vi - IV', 'vi - IV - I - V', 'I - vi - IV - V']
+const options =[
+  { label: 'I - IV - V', value:[0,3,4] },
+  { label:  ' I - V - vi - IV', value:[0,4,-5 ,3] },
+  { label:  'vi - IV - I - V', value:[-5,3,0,4] },
+  { label:  'I - vi - IV - V', value:[0,-5,3,4] },
+  ]
 
 </script>
 
