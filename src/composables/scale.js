@@ -54,5 +54,11 @@ export  function minorScale(root){
 }
 
 export function reduceScaleToProgression(progression, fullScale){
+  const response =[]
+  progression.value.forEach(degree => {
+    response.push(fullScale[degree])
+  });
+
+  return response
 
 }
