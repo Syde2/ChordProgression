@@ -56,7 +56,11 @@ export  function minorScale(root){
 export function reduceScaleToProgression(progression, fullScale){
   const response =[]
   progression.value.forEach(degree => {
-    response.push(fullScale[degree])
+    degree >= 0 ?
+    response.push(fullScale[degree]):
+    response.push( `${fullScale[ Math.abs(degree) ]}` )
+
+
   });
 
   return response

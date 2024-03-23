@@ -24,7 +24,7 @@ const slots = useSlots()
 
       </q-card-section>
     </div>
-    <q-card-section v-if="slots.footer" class="bg-secondary flex flex-center">
+    <q-card-section v-if="slots.footer" class="bg-secondary flex flex-center q-gutter-md">
       <slot name="footer"></slot>
 
     </q-card-section>

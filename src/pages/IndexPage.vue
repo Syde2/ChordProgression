@@ -30,7 +30,7 @@ function getTheProgressionChords(){
 function handleSubmit() {
   try {
     const scale = setTheScale()
-     tempDisplayAnswer.value = getTheProgressionChords()
+    chordsModel.value = getTheProgressionChords()
 
   } catch (error) {
     Notify.create({
@@ -38,6 +38,11 @@ function handleSubmit() {
       message: error
     })
   }
+}
+
+function handleClear(){
+  chordsModel.value.length = 0
+  progressionModel.value = null
 }
 
 </script>
@@ -57,11 +62,11 @@ function handleSubmit() {
         <ProgressionSelect v-model=progressionModel />
         <div style="height: 30px;" class="flex flex-center text-white">
           {{ tempDisplayAnswer }}
-
         </div>
       </div>
       <template v-slot:footer>
         <q-btn type="submit" @click="handleSubmit" class="full-height bg-accent" label="submit" />
+        <q-btn @click="handleClear"  class="bg-grey-6" label="clear"  />
       </template>
     </CardContainer>
   </q-page>
